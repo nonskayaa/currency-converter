@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
-import { Currency, CurrencyRate } from './currency';
+import { Currency} from './currency';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel } from '@angular/forms';
 import { DataService } from './data.service';
