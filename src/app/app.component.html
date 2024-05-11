@@ -2,39 +2,29 @@
   <div class="currency_converter__container">
     <h1 class="currency_converter__title">{{ title }}</h1>
 
-    <div class="amount_input__container">
-      <div class="amount_input__left-side">
-        <img
-          src="../assets/images/flags/russia.png"
-          alt="russia flag"
-          class="amount_input__img"
-        />
-        <p class="amount_input__symbol">₽</p>
-      </div>
-
-      <input
-        #newAmount
-        name="RUB"
-        [(ngModel)]="amount"
-        (ngModelChange)="changeAmount(newAmount.value)"
-        class="amount_input"
-      />
-    </div>
-
     <ul class="currency_list">
-      <li *ngFor="let currency of currencyToList" class="currency_item">
+      <li
+        *ngFor="let currency of currencyInfoList"
+        [ngClass]="{ currency_item: true, focus: currency.code === base }"
+      >
         <div class="currency_item__left-side">
           <img [src]="currency.flag" alt="flag" class="currency_item__img" />
+
           <p class="currency_item__symbol">
             {{ currency.symbol }}
           </p>
         </div>
-        <p class="currency_item__amount">
-          {{ (currencyRates[currency.code] * amount).toFixed(1) }}
-        </p>
+
+        <input
+          #newAmount
+          [attr.name]="currency.code"
+          [ngModel]="currency.totalAmount"
+          (ngModelChange)="changeAmount(newAmount.value, newAmount.name)"
+          class="amount_input"
+        />
       </li>
     </ul>
-    <p class="currency_converter">
+    <p class="currency_converter__subtitle">
       *конвертер валют типичного русского релоканта
     </p>
   </div>

@@ -20,15 +20,14 @@
 
   border-radius: 15px;
   border: 2px solid lightgrey;
-
 }
 
-.currency_converter__title{
+.currency_converter__title {
   font-weight: 400;
   padding: 20px;
 }
 
-.currency_converter__subtitle{
+.currency_converter__subtitle {
   margin-top: 20px;
 
   color: grey;
@@ -37,7 +36,7 @@
   &_input {
     width: 100%;
 
-    text-align: right; 
+    text-align: right;
     border: none;
 
     font-size: 50px;
@@ -85,6 +84,8 @@
   width: 100%;
 
   list-style: none;
+
+  margin-bottom: 25px;
 }
 
 .currency_item {
@@ -121,3 +122,25 @@
 
   margin-left: 5px;
 }
+
+
+.currency_converter__subtitle{
+  text-align: center;
+}
+.focus {
+  height: 120px;
+}
+
+@media (max-width: 1268px){
+  .currency_converter__container{
+    width: 100vw;
+    height: 85vh;
+
+  border-radius: 30px;
+
+  }
+
+  .currency_item{
+    padding: 0px 30px;
+  }
+} 
